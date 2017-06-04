@@ -86,6 +86,12 @@ const plugins = {
     ),
 };
 
+const devServer={
+    host: "zyos0.marvel.com",
+    port: 80,
+    https: false
+};
+
 const config = {
     entry: {
         bundle: paths.app,
@@ -109,6 +115,7 @@ const config = {
         publicPath: '/',
         filename: 'js/app.[name].js',
     }
+
 };
 
 

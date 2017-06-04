@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server -p --progress --colors --inline --hot --https --open --content-base bin/",
+    "start": "node_modules/.bin/webpack-dev-server -p --progress --colors --inline --hot --https  --host zyos0.marvel.com --open --content-base bin/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -30,6 +30,7 @@
     "angular-ui-router": "^1.0.3",
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
+    "crypto-js": "^3.1.9-1",
     "extract-text-webpack-plugin": "^2.1.0",
     "ng-annotate-webpack-plugin": "^0.2.1-pre"
   }
