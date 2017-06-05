@@ -1,6 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-
+import { common } from './common/common.module';
 import httpHandler from './services/httpHandler';
 import { rootComponent } from './root.component';
 import './root.scss';
@@ -8,7 +8,8 @@ export const root = angular
     .module(
         'root',
         [
-            uiRouter
+            uiRouter,
+            common
         ]
     )
     .component('root',rootComponent)

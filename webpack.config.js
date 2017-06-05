@@ -2,6 +2,8 @@ const cleanPlugin = require('clean-webpack-plugin');
 const copyPlugin = require('copy-webpack-plugin');
 const extractPlugin = require('extract-text-webpack-plugin');
 
+const dir=`${__dirname}/`;
+
 const root = `${__dirname}/src`;
 const dist = `${__dirname}/dist`;
 
@@ -10,7 +12,8 @@ const paths = {
     styles: `${root}/styles`,
     static: {
         index: `${root}/index.html`,
-        images: `${root}/img/**/*`
+        images: `${root}/img/**/*`,
+        templates:`${root}/app/**/*.html`
     },
 };
 
@@ -24,7 +27,7 @@ const scripts = {
         {
             loader: 'babel-loader',
             options: {
-                presets: ['es2015'],
+                presets: ['es2015','stage-2'],
             }
         }
 
@@ -35,7 +38,7 @@ const scripts = {
 const html = {
     test: /\.html$/,
     use: [
-        {loader: 'ngtemplate-loader'},
+        {loader: 'ngtemplate-loader?relativeTo=' + dir},
         {loader: 'html-loader'}
     ]
 };
@@ -82,6 +85,7 @@ const plugins = {
                 to: 'img/',
                 flatten: true,
             }
+
         ]
     ),
 };
@@ -114,6 +118,10 @@ const config = {
         path: `${dist}/`,
         publicPath: '/',
         filename: 'js/app.[name].js',
+    },
+    devServer: {
+        port: 8080,
+        historyApiFallback: true,
     }
 
 };
