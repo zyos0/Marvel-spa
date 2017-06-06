@@ -13,7 +13,7 @@ export const app = angular.module('common.app', [
 
     $stateProvider
       .state('app', {
-        url: '/app',
+        url: '/',
         component: 'app',
       });
   })

@@ -1,49 +1,46 @@
-.header {
-  height: 60px;
+#header-navbar {
+  background-color: #3D362D;
 
-  &__fixed {
-    background: #fff;
-    height: inherit;
-    position: fixed;
-    top: 0;
-    left: 250px;
-    right: 0;
-    border-bottom: 1px solid #E9EEF3;
-    padding: 13px 20px;
-    font-size: 16px;
+
+  color: #FFFFFF;
+}
+
+.header-navbar-input {
+  padding: 11px 16px;
+  border-radius: 2px 0 0 2px;
+  border: 0 none;
+  outline: 0 none;
+  font-size: 15px;
+  color: #000;
+}
+
+.header-navbar-button {
+  background-color: #ffe11b;
+  border: 1px solid #ffe11b;
+  border-radius: 0 2px 2px 0;
+  color: #565656;
+  padding: 10px 0;
+  height: 43px;
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 768px) {
+  .largenav {
+    display: block;
   }
-
-  &__brand {
-    font-size: 24px;
-    float: left;
+  .smallnav{
+    display: none;
   }
-
-  &__logout {
-    float: right;
-
-    a {
-      display: inline-block;
-      color: #E32E30;
-      padding: 5px 10px;
-      margin-left: 10px;
-    }
-  }
-
-  &__button {
-    font-size: 16px;
-
-    &--new-contact {
-      color: #50D749;
-      margin-left: 30px;
-      position: relative;
-      top: -2px;
-    }
-
-    .material-icons {
-      font-size: inherit;
-      position: relative;
-      top: 2px;
-      margin-right: 3px;
-    }
+  .smallsearch{
+    margin: 0px;
   }
 }
+
+.header-wrapper{
+  padding-top:5px;
+  padding-bottom:5px;
+
+}
+
+

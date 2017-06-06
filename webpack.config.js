@@ -1,8 +1,10 @@
 const cleanPlugin = require('clean-webpack-plugin');
 const copyPlugin = require('copy-webpack-plugin');
 const extractPlugin = require('extract-text-webpack-plugin');
+const webpack = require("webpack");
 
-const dir=`${__dirname}/`;
+
+const dir = `${__dirname}`;
 
 const root = `${__dirname}/src`;
 const dist = `${__dirname}/dist`;
@@ -10,10 +12,12 @@ const dist = `${__dirname}/dist`;
 const paths = {
     app: `${root}/app/root.module.js`,
     styles: `${root}/styles`,
+    bootstrap: `${dir}/node_modules/bootstrap/dist/`,
+    marvel: `${dir}/node_modules/typeface-marvel/files/`,
     static: {
         index: `${root}/index.html`,
         images: `${root}/img/**/*`,
-        templates:`${root}/app/**/*.html`
+        templates: `${root}/app/**/*.html`
     },
 };
 
@@ -49,7 +53,7 @@ const fonts = {
 };
 
 const styles = {
-    test: /\.scss$/,
+    test: /\.(css|scss)$/,
     loader: extractPlugin.extract(
         {
             fallback: "style-loader",
@@ -60,7 +64,7 @@ const styles = {
                 {
                     loader: 'sass-loader',
                     options: {
-                        includePaths:[paths.styles],
+                        includePaths: [paths.styles],
                         sourceMap: true,
 
                     }
@@ -84,13 +88,20 @@ const plugins = {
                 from: paths.static.images,
                 to: 'img/',
                 flatten: true,
+            },
+            {
+                from:paths.bootstrap
+            },
+            {
+                from:paths.marvel,
+                to:'fonts/'
             }
 
         ]
     ),
 };
 
-const devServer={
+const devServer = {
     host: "zyos0.marvel.com",
     port: 80,
     https: false
@@ -109,12 +120,17 @@ const config = {
             fonts,
         ]
     },
-    plugins:[
+    plugins: [
         plugins.clean,
         plugins.copy,
-        new extractPlugin('css/styles.css')
+        new extractPlugin('css/styles.css'),
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
+        })
     ],
-    output:{
+    output: {
         path: `${dist}/`,
         publicPath: '/',
         filename: 'js/app.[name].js',
@@ -128,44 +144,3 @@ const config = {
 
 
 module.exports = config;
-/*{
-    entry: './app/root.module.js',
-    devtool: 'source-map',
-    output: {
-        path: path.resolve(__dirname, 'app'),
-        filename: 'bundle.js'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: 'ngtemplate-loader'
-                    },
-                    {
-                        loader: 'html-loader'
-                    }
-                ]
-            },
-            {
-                test: /\.js?$/,
-                exclude: [/node_modules/],
-                use: [
-                    {
-                        loader: 'ng-annotate-loader'
-                    },
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['es2015'],
-                        }
-                    }
-
-                ]
-            }
-
-        ]
-    }
-};*/
-
