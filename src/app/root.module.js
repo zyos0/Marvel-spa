@@ -6,6 +6,7 @@ import { rootComponent } from './root.component';
 import 'typeface-marvel';
 import jQuery from "jquery";
 import 'bootstrap';
+import uib from  'angular-ui-bootstrap';
 
 
 
@@ -18,7 +19,8 @@ export const root = angular
         'root',
         [
             uiRouter,
-            common
+            common,
+            uib
         ]
     )
     .component('root',rootComponent)
