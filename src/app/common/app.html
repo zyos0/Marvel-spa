@@ -1,11 +1,10 @@
 <div class="root">
-  <app-nav on-search="$ctrl.queryApi(Query);"></app-nav>
-  <div class="app">
-
-    <div ng-repeat="char in $ctrl.characters">
+    <app-nav on-search="$ctrl.queryApi(Query);"></app-nav>
+        <div class="row text-center">
+            <character-card class="col-xs-12 col-lg-6 col-md-6" ng-repeat="char in $ctrl.characters" character="char"></character-card>
+            <ul ng-change="$ctrl.updateCharacters()" uib-pagination boundary-links="true" total-items="$ctrl.total"
+                max-size="$ctrl.maxPages" ng-model="$ctrl.currentPage" class="pagination-sm" previous-text="&lsaquo;"
+                next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+        </div>
     </div>
-        {{$ctrl.total}}
-      <ul ng-change="$ctrl.updateCharacters()" uib-pagination boundary-links="true"  total-items="$ctrl.total" max-size="$ctrl.maxPages" ng-model="$ctrl.currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
 
-  </div>
-</div>

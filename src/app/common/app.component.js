@@ -1,6 +1,7 @@
 import templateUrl from './app.html';
 
 
+
 export const appComponent = {
     templateUrl,
     controller:class AppComponent {
@@ -9,6 +10,7 @@ export const appComponent = {
             this.$state = $state;
             this.marvelService=marvelService;
             this.characters=[];
+            this.searchText='';
             this.currentPage=1;
             this.maxPages=10;
         }
@@ -35,16 +37,26 @@ export const appComponent = {
 
         updateCharacters(){
             console.log(this.currentPage);
-            this.marvelService.getCharacters(this.currentPage)
+            this.marvelService.getCharacters(this.currentPage,this.searchText)
                 .then(
                     this.handleData,
                     this.handleError
                 );
         }
 
-        queryApi(Query) {
+        applySearch(){
+            this.marvelService.getCharacters(this.currentPage,this.searchText)
+                .then(
+                    this.handleData,
+                    this.handleError
+                );
 
-            console.log(Query);
+        }
+
+        queryApi(Query) {
+            this.searchText=Query;
+            this.applySearch();
+
         }
 
         logout() {

@@ -1,0 +1,58 @@
+.char-name{
+  font-size: 1.5em;
+  margin-top: -11px;
+  padding-right: 15px;
+}
+
+.char-item{
+  margin-top: 35px;
+  background-color: #ffffff;
+  width: 460px;
+  height:420px;
+}
+
+.char-img{
+  width: 12em;
+  height: 12em;
+  overflow: hidden;
+  text-align: center;
+  top: -15px;
+  left: -10px;
+  position: relative;
+}
+
+.char-comics-head{
+  font-size: 1.2em;
+  text-transform: capitalize;
+  color: #666666;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+
+
+.char-comics{
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  column-count: 2;
+  column-gap: 20px;
+  font-size: 0.9em;
+  list-style: none;
+  padding-left: 30px;
+}
+
+.char-comics li{
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  margin-bottom: 20px;
+}
+
+.char-description{
+  font-size: 0.9em;
+  padding-right: 15px;
+  min-height: 100px;
+}
+

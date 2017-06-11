@@ -1,0 +1,25 @@
+<div class="char-item">
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-xs-12 image">
+
+            <img ng-src="{{$ctrl.character.thumbnail.path}}/standard_xlarge.{{$ctrl.character.thumbnail.extension}}"
+                 class="img-responsive img-circle char-img">
+
+        </div>
+        <div class="col-lg-7 col-md-7 col-xs-12">
+            <h1 class="char-name">{{$ctrl.character.name}}</h1>
+            <p class="char-description">
+                {{$ctrl.character.description? ($ctrl.character.description | limitTo:200)+'...' : 'NO DATA AVALIABLE'}}
+            </p>
+            <button type="button" class="btn btn-primary">VIEW MORE</button>
+        </div>
+    </div>
+    <div ng-if="$ctrl.character.comics.items.length > 0" class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12">
+            <h2 class="char-comics-head">Related comics</h2>
+            <ul class="char-comics">
+                <li ng-repeat="comic in $ctrl.character.comics.items | limitTo:4">{{comic.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

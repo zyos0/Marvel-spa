@@ -6,16 +6,20 @@ export default class marvelService {
         this.$http = $http;
     }
 
-    getCharacters(page = 0, search, orderBy = 'name', limit = 20) {
+    getCharacters(page = 0, search, orderBy = 'name', limit = 10) {
         console.log("desde", page);
+        var params = {
+            limit: limit,
+            offset: ((page) ? --page : page) * limit
+        };
+        if(search)
+            params.nameStartsWith=search;
+
         return this.$http.get('api/characters',
             {
-                params: {
-                    limit: limit,
-                    offset: ((page) ? --page: page) * limit
-                }
-            })
-            .then(response => response.data);
+                params: params
+            }
+        ).then(response => response.data);
     }
 
 
