@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server -p --progress --colors --inline --hot --https  --host zyos0.marvel.com --open --bail --content-base bin/",
+    "start": "node_modules/.bin/webpack-dev-server -d --progress --colors --inline --hot --https  --host zyos0.marvel.com --open --bail --content-base bin/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -40,6 +40,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "jquery": "^3.2.1",
     "ng-annotate-webpack-plugin": "^0.2.1-pre",
+    "ngstorage": "^0.3.11",
     "typeface-marvel": "0.0.22"
   }
 }

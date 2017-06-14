@@ -3,6 +3,7 @@ import templateUrl from './app-nav.html';
 export const navComponent = {
     bindings: {
         onSearch: '&',
+        kind:'@'
     },
     templateUrl,
     controller: class NavComponentt {
@@ -14,10 +15,10 @@ export const navComponent = {
             console.log("cons",this.onSearch);
         }
 
-        lol(){
-            console.log('no quiero  funcionar');
-
+        goHome(){
+            this.$state.go('app');
         }
+
         $onInit() {
 
             console.log("ini",this.onSearch);

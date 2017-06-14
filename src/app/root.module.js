@@ -7,6 +7,7 @@ import 'typeface-marvel';
 import jQuery from "jquery";
 import 'bootstrap';
 import uib from  'angular-ui-bootstrap';
+import ngstorage from'ngstorage';
 
 
 
@@ -20,7 +21,8 @@ export const root = angular
         [
             uiRouter,
             common,
-            uib
+            uib,
+            'ngStorage'
         ]
     )
     .component('root',rootComponent)

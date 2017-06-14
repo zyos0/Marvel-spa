@@ -1,0 +1,28 @@
+    <div class="modal-body comic-details">
+        <div class="row">
+            <div class="pull-right close-btn" ng-click="$ctrl.close()">
+                <i class="marvel-icon close-icon"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-5">
+                <img ng-src="{{$ctrl.comic.thumbnail.path}}.{{$ctrl.comic.thumbnail.extension}}"  class="img-responsive">
+            </div>
+            <div class="col-lg-7 col-md-7 col-xs-5">
+                <h2 class="modal-title" id="modal-title">{{$ctrl.comic.title}}</h2>
+                <p class="description" id="modal-body">{{$ctrl.comic.description}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer comic-details">
+        <div class="add-comic" ng-class="{active: $ctrl.isFav()}">
+            <h2 ng-click="$ctrl.persistComic()">
+                <i class="marvel-icon fav-icon" ng-class="{active: $ctrl.isFav()}"></i> ADD{{ ($ctrl.isFav()) ? 'ED': ''}} TO FAVOURITES
+            </h2>
+        </div>
+        <div class="buy-comic">
+            <h2>
+                <i class="marvel-icon cart-icon"></i> BUY FOR {{$ctrl.comic.prices[0].price | currency:"$"}}
+            </h2>
+        </div>
+    </div>

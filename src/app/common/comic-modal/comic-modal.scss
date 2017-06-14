@@ -1,0 +1,52 @@
+.modal-content{
+  overflow: hidden;
+}
+.modal-body.comic-details h2.modal-title{
+  font-size: 1.5em;
+  line-height: 1.1em;
+  margin-bottom: 15px;
+}
+.modal-body.comic-details p.description{
+  font-size: 0.9em;
+  height: 155px;
+  overflow: hidden;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+.modal-body.comic-details div.close-btn{
+  position: relative;
+  right: 8px;
+  top: -9px;
+  cursor: pointer;
+}
+.modal-footer.comic-details{
+  padding: 0px;
+}
+.modal-footer.comic-details > div{
+  height: 60px;
+  display: inline-block;
+  width: 50%;
+  float: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+.modal-footer.comic-details > div h2{
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin: 0px;
+}
+.modal-footer.comic-details > div.add-comic{
+  background-color: #ececec;
+  cursor: pointer;
+}
+.modal-footer.comic-details > div.add-comic.active{
+  background-color: #312f2f;
+  cursor: default;
+}
+.modal-footer.comic-details > div.add-comic.active h2{
+  color: #ed1c20;
+}
+.modal-footer.comic-details > div.buy-comic{
+  background-color: #dbdcd7;
+}

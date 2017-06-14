@@ -1,18 +1,23 @@
 import templateUrl from './character-card.html';
 export const characterCardComponent={
     bindings:{
-        character:'<'
+        character:'<',
+        full:'@'
     },
     templateUrl,
     controller: class CharacterCardComponent{
 
-        constructor(){
+        constructor($location){
             'ngInject';
+            this.$location=$location;
         }
 
         $onInit() {
-            console.log("este");
-                console.log(this.character);
+
+        }
+
+        goToDetails(){
+            this.$location.path('/character/'+this.character.id);
         }
 
 

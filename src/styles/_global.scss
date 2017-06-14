@@ -1,0 +1,90 @@
+.search-sel{
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+.marvel-icon{
+  display: inline-block;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  vertical-align: middle;
+}
+
+.brand-icon{
+  width: 100px;  
+}
+
+.char-icon{
+  background-image: url('/images/characters.png');
+  width: 40px;
+  height: 40px;
+}
+
+.search-icon{
+  background-image: url('/images/search.png');
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin-left:-40px;
+  pointer-events: none;
+}
+.delete-icon{
+  background-image: url('/images/btn-delete.png');
+  width: 40px;
+  height: 40px;
+}
+.arrow-icon{
+  background-image: url('/images/link-arrow.png');
+  width: 30px;
+  height: 30px;
+}
+.close-icon{
+  background-image: url('/images/btn-close.png');
+  width: 30px;
+  height: 30px;
+}
+.cart-icon{
+  background-image: url('/images/shopping-cart-primary.png');
+  width: 40px;
+  height: 40px;
+}
+.fav-icon-default{
+  background-image: url('/images/btn-favourites-default.png');
+  width: 40px;
+  height: 40px;
+}
+.fav-icon.active{
+  background-image: url('/images/btn-favourites-primary.png');
+  width: 40px;
+  height: 40px;
+}
+
+.fav-icon{
+  background-image: url('/images/favourites.png');
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+.btn-primary{
+  background-color: #f11d21;
+  border-color: #f11d21;
+}
+
+.btn-primary:hover,.btn-primary:active,.btn-primary:focus
+.btn-success:active:focus,.btn-success:active:hover,
+.btn-success:hover,.btn-success:active, .btn-success:focus,
+.btn-primary:active:hover, .btn-primary.active:hover,
+.btn-primary:active:focus, .btn-primary.active:focus,
+.btn-primary:active.focus, .btn-primary.active.focus{
+  background-color: #000000;
+  border-color: #000000;
+  box-shadow: none;
+  outline: none;
+
+
+}

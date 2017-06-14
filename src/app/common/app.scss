@@ -1,3 +1,44 @@
-.app {
-  margin-left: 250px;
+.fav-bar{
+  background-color: #ebebeb;
+  padding-top: 25px;
+  height: 100vh;
+  right: 0;
+  overflow: scroll;
+  position: fixed;
+}
+
+
+.pagination > li > a{
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  color: #8a8888;
+  font-weight: bold;
+  -webkit-box-shadow: 1px 2px 4px 0px rgba(0,0,0,0.42);
+  -moz-box-shadow: 1px 2px 4px 0px rgba(0,0,0,0.42);
+  box-shadow: 1px 2px 4px 0px rgba(0,0,0,0.42);
+}
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > li > a:hover{
+  color: black;
+  background-color: white;
+  border-color: white;
+  box-shadow: none;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > a:hover{
+  background-image: url('/images/btn_arrow_left.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > a:hover{
+  background-image: url('/images/btn_arrow_right.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
 }

@@ -8,13 +8,20 @@
         </div>
         <div class="col-lg-7 col-md-7 col-xs-12">
             <h1 class="char-name">{{$ctrl.character.name}}</h1>
-            <p class="char-description">
-                {{$ctrl.character.description? ($ctrl.character.description | limitTo:200)+'...' : 'NO DATA AVALIABLE'}}
+            <p class="char-description" ng-if="!$ctrl.full">
+                {{$ctrl.character.description? ($ctrl.character.description | limitTo:65)+'...' : 'NO DATA AVALIABLE'}}
             </p>
-            <button type="button" class="btn btn-primary">VIEW MORE</button>
+            <p class="char-description" ng-if="$ctrl.full">
+                {{$ctrl.character.description? ($ctrl.character.description) : 'NO DATA AVALIABLE'}}
+            </p>
+
+
+
+            <button type="button"  ng-if="!$ctrl.full" class="btn btn-primary" ng-click="$ctrl.goToDetails()">VIEW MORE</button>
+
         </div>
     </div>
-    <div ng-if="$ctrl.character.comics.items.length > 0" class="row">
+    <div ng-if="!$ctrl.full &&$ctrl.character.comics.items.length > 0" class="row">
         <div class="col-lg-12 col-md-12 col-xs-12">
             <h2 class="char-comics-head">Related comics</h2>
             <ul class="char-comics">
@@ -22,4 +29,19 @@
             </ul>
         </div>
     </div>
+    <div ng-if="$ctrl.full" class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12">
+            <h2 class="char-comics-head">Info</h2>
+            <ul class="char-comics">
+                <li>{{$ctrl.character.comics.available}} Comics</li>
+                <li>{{$ctrl.character.events.available}} Events</li>
+                <li>{{$ctrl.character.series.available}} Series</li>
+                <li>{{$ctrl.character.stories.available}} Stories</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
 </div>

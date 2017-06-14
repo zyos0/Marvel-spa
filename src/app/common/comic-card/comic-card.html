@@ -1,0 +1,9 @@
+<div>
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-xs-4 col-lg-offset-2 col-md-offset-2">
+            <div  ng-if="$ctrl.action"  ng-click="$ctrl.delete()" class="delete-btn"><i class="marvel-icon delete-icon"></i></div>
+            <img  ng-click="$ctrl.openModal()" ng-src="{{$ctrl.comic.thumbnail.path}}.{{$ctrl.comic.thumbnail.extension}}"  class="img-responsive">
+            <p class="title">{{$ctrl.comic.title}}</p>
+        </div>
+    </div>
+</div>

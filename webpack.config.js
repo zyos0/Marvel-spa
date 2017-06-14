@@ -16,7 +16,7 @@ const paths = {
     marvel: `${dir}/node_modules/typeface-marvel/files/`,
     static: {
         index: `${root}/index.html`,
-        images: `${root}/img/**/*`,
+        images: `${root}/images/**/*`,
         templates: `${root}/app/**/*.html`
     },
 };
@@ -86,7 +86,7 @@ const plugins = {
             },
             {
                 from: paths.static.images,
-                to: 'img/',
+                to: 'images/',
                 flatten: true,
             },
             {
