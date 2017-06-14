@@ -33,7 +33,7 @@ export default class storageService {
         let toAdd = winners.length - number;
 
         toAdd = (toAdd >= 0) ? (toAdd > number ? number : toAdd) : (toAdd === 0 ? number : toAdd + number);
-        debugger;
+
         console.log(toAdd);
         console.log(this.favs);
         while (toAdd--) {
